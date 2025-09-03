@@ -1,0 +1,70 @@
+/* Base tokens for the footer */
+:root {
+  --footer-bg: #ffffff;
+  --footer-fg: #0f172a;          /* near-slate-900; contrast ~12:1 on white */
+  --footer-link: #0a58ca;        /* accessible blue on white */
+  --footer-muted: #334155;       /* slate-700; still > 4.5:1 on white */
+  --footer-border: #e2e8f0;      /* light divider */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --footer-bg: #0b1220;        /* deep navy */
+    --footer-fg: #e5e7eb;        /* gray-200; contrast > 10:1 on #0b1220 */
+    --footer-link: #93c5fd;      /* light blue; contrast > 4.5:1 on dark bg */
+    --footer-muted: #cbd5e1;     /* gray-300 */
+    --footer-border: #1f2937;    /* gray-800 divider */
+  }
+}
+
+.site-footer {
+  background: var(--footer-bg);
+  color: var(--footer-fg);
+  border-top: 1px solid var(--footer-border);
+
+  /* vertical rhythm */
+  padding-block: 1.25rem;                 /* 20px */
+}
+
+.footer-inner {
+  /* ensure max line length on big screens if your grid doesn’t already */
+  max-width: 72ch;
+  margin-inline: auto;
+}
+
+/* Responsive, readable sizes */
+.footer-meta,
+.footer-copy {
+  /* 14px → 16px based on width */
+  font-size: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);
+  line-height: 1.6;
+  margin: 0;                               /* reset */
+}
+
+.footer-meta {
+  color: var(--footer-muted);
+  margin-bottom: 0.25rem;
+}
+
+.footer-copy {
+  color: var(--footer-fg);
+}
+
+/* Links: visible, accessible */
+.footer-link {
+  color: var(--footer-link);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Spacing & stacking on narrow viewports */
+@media (max-width: 480px) {
+  .footer-inner {
+    padding-inline: 1rem;
+    text-align: center;
+  }
+  .footer-meta,
+  .footer-copy {
+    font-size: clamp(0.9375rem, 0.9rem + 0.5vw, 1.0625rem); /* small bump on tiny screens */
+  }
+}

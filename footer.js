@@ -11,14 +11,13 @@
     document.body.appendChild(el);
   }
   el.innerHTML = `
-    <footer class="site-footer">
+    <footer class="site-footer" role="contentinfo">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12 col-12">
-            <p class="copyright-text">
-              <h6>  Mini Finance v1.0 — Deployed on ${formattedDate} — By Maleesha Ranawaka </h6>
-              Copyright © Mini Finance 2048 - Design:
-              <a rel="sponsored" href="https://www.tooplate.com" target="_blank">Tooplate</a>
+          <div class="col-lg-12 col-12 footer-inner">
+            <p class="footer-meta">Mini Finance v1.0 — Deployed on <time>${formattedDate}</time> — By Maleesha Ranawaka</p>
+            <p class="footer-copy">© Mini Finance 2048 — Design:
+              <a class="footer-link" rel="sponsored" href="https://www.tooplate.com" target="_blank">Tooplate</a>
             </p>
           </div>
         </div>
